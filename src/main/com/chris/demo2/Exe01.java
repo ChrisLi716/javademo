@@ -15,7 +15,7 @@ public class Exe01 {
     private final static String PATTERN_ONE = "yyyy-MM-dd HH:mm:ss_SSS";
 
     public static void main(String[] args) {
-        DateFormat df = new SimpleDateFormat(PATTERN_ONE);
+        DateFormat df = getDateFormat(PATTERN_ONE);
         System.out.println(df.format(new Date()));
     }
 
