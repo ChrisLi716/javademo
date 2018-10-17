@@ -18,6 +18,8 @@ public class FileReader {
         if (StringUtils.isNotEmpty(filePath)) {
             boolean isFileExists = fileReader.isFileExisted(new File(filePath));
             System.out.println(isFileExists);
+        } else {
+            System.out.println("the file path is empty!");
         }
 
     }
