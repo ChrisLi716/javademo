@@ -1,5 +1,7 @@
 package com.chris.demo2;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,8 +12,22 @@ import java.util.Date;
  * @Description
  */
 public class Exe01 {
+    private final static String PATTERN_ONE = "yyyy-MM-dd HH:mm:ss_SSS";
+
     public static void main(String[] args) {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss_SSS");
+        DateFormat df = new SimpleDateFormat(PATTERN_ONE);
         System.out.println(df.format(new Date()));
     }
+
+    private static DateFormat getDateFormat(String datePattern) {
+        DateFormat df;
+        if (StringUtils.isNotEmpty(datePattern)) {
+            df = new SimpleDateFormat(datePattern);
+        } else {
+            df = new SimpleDateFormat();
+        }
+        return df;
+    }
+
+
 }
