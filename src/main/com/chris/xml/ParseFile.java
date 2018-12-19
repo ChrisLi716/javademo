@@ -3,6 +3,7 @@ package com.chris.xml;
 import com.chris.CommonUtils;
 import com.chris.io.FileBean;
 import com.chris.io.FileWriterUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -54,8 +55,14 @@ public class ParseFile {
 		for (Iterator<Element> it = root.elementIterator("item"); it.hasNext();) {
 			Element item = it.next();
 			Element wordEle = item.element("word");
-			String word = wordEle.getTextTrim() + " " + item.element("phonetic").getTextTrim() + CommonUtils.getNewLineCharacter();
+			
+			String word = wordEle.getTextTrim();
 			sb.append(word);
+			String phonetic = item.element("phonetic").getTextTrim();
+			if (StringUtils.isNotEmpty(phonetic)) {
+				sb.append(" ").append(phonetic);
+			}
+			sb.append(CommonUtils.getNewLineCharacter());
 		}
 		
 		// iterate through attributes of root
