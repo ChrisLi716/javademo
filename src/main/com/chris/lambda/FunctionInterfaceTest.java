@@ -1,5 +1,8 @@
 package com.chris.lambda;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @Auther Chris Lee
  * @Date 12/21/2018 12:45
@@ -10,6 +13,24 @@ public class FunctionInterfaceTest {
 	public static void main(String[] args) {
 		FunctionInterfaceTest test = new FunctionInterfaceTest();
 		
+		LambdaListTesting();
+		// lambdaTest(test);
+	}
+	
+	private static void LambdaListTesting() {
+		List<String> list = new ArrayList<>();
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		list.add("4");
+		list.add("5");
+		
+		long count = list.stream().filter(str -> 0 == (Integer.valueOf(str) % 2)).count();
+		System.out.println(count);
+		
+	}
+	
+	private static void lambdaTest(FunctionInterfaceTest test) {
 		test.func(() -> test.outputStr("Hello Lambda!"));
 		
 		test.funcParams((Integer i) -> test.outputStr("Hello Lambda!" + i));
