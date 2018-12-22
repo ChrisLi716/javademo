@@ -11,12 +11,12 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class FileBean {
-	
-	private String fileName;
-	
-	private String extension;
-	
-	private String filePath;
-	
-	private byte[] content;
+
+    private String fileName;
+
+    private String extension;
+
+    private String filePath;
+
+    private byte[] content;
 }
