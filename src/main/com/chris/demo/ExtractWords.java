@@ -3,6 +3,7 @@ package com.chris.demo;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class ExtractWords {
 
@@ -30,7 +31,7 @@ public class ExtractWords {
 
         OutputStream outputStream = new FileOutputStream(new File(outputFileName));
         String wantedString = sb.toString().replaceAll("\\|", newLineSeperator);
-        outputStream.write(wantedString.getBytes("UTF-8"));
+        outputStream.write(wantedString.getBytes(StandardCharsets.UTF_8));
         outputStream.close();
     }
 }
