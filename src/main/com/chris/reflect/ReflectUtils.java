@@ -50,8 +50,11 @@ class ReflectUtils {
 							List list = (List)value;
 							fieldValue = list.toString();
 						}
+						else if (field.getType() == Class.class) {
+							fieldValue = ((Class)value).getTypeName();
+						}
 						else {
-							fieldValue = (String)field.get(obj);
+							fieldValue = (String)value;
 						}
 					}
 					

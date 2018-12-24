@@ -1,5 +1,6 @@
 package com.chris.reflect;
 
+import com.chris.reflect.Bean.HumanBeing;
 import com.chris.reflect.Bean.Male;
 
 import java.util.Arrays;
@@ -13,6 +14,8 @@ public class MainTest {
 	
 	public static void main(String[] args)
 		throws Exception {
+		HumanBeing.desc();
+		Male.desc();
 		Male male = new Male("Chris", "CN", "Male");
 		male.setCarList(Arrays.asList("Lamborghini", "VM"));
 		String descStr = ReflectUtils.buildRequestStr(male);

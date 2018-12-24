@@ -1,8 +1,6 @@
 package com.chris.reflect.Bean;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @Auther Chris Lee
@@ -10,9 +8,38 @@ import lombok.NoArgsConstructor;
  * @Description
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class HumanBeing {
+	
+	public static void desc() {
+		System.out.println("init static method for " + CLZ_TYPE.getTypeName());
+	}
+	
+	public static final Class CLZ_TYPE = HumanBeing.class;
+	static {
+		System.out.println("init static block for " + CLZ_TYPE.getTypeName());
+	}
+	
+	{
+		System.out.println("init block for " + CLZ_TYPE.getTypeName());
+	}
+	
+	HumanBeing()
+	{
+		System.out.println("init default constructor for " + CLZ_TYPE.getTypeName());
+	}
+	
+	HumanBeing(String name, String address)
+	{
+		System.out.println("init default constructor for " + CLZ_TYPE.getTypeName());
+	}
+	
+	HumanBeing(String name, String address, String gendar)
+	{
+		System.out.println("init full paramters constructor for " + CLZ_TYPE.getTypeName());
+		this.name = name;
+		this.address = address;
+		this.gendar = gendar;
+	}
 	
 	private String name;
 	
