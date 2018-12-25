@@ -1,4 +1,4 @@
-package comparable;
+package com.chris.comparable;
 
 import java.util.Comparator;
 
@@ -7,9 +7,9 @@ import java.util.Comparator;
  * @Date 12/25/2018 14:23
  * @Description
  */
-public class PlayerRankingComparator implements Comparator<Player> {
+public class PlayerAgeComparator implements Comparator<Player> {
 	@Override
 	public int compare(Player o1, Player o2) {
-		return (o1.getRanking() - o2.getRanking());
+		return (o1.getAge() - o2.getAge());
 	}
 }

@@ -1,4 +1,4 @@
-package comparable;
+package com.chris.comparable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +10,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class Player implements Comparable<Player> {
+class Player implements Comparable<Player> {
 	private int ranking;
 	
 	private String name;

@@ -1,4 +1,4 @@
-package comparable;
+package com.chris.comparable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,14 +16,12 @@ public class ComparableTest {
 		Player player1 = new Player(59, "John", 20);
 		Player player2 = new Player(67, "Roger", 22);
 		Player player3 = new Player(45, "Steven", 24);
+
 		footballTeam.add(player1);
 		footballTeam.add(player2);
 		footballTeam.add(player3);
 		
 		comparable(footballTeam);
-		
-
-		
 	}
 	
 
