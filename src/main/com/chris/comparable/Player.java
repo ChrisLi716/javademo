@@ -5,12 +5,13 @@ import lombok.Data;
 
 /**
  * @Auther Chris Lee
- * @Date 12/25/2018 14:11
+ * @Date 12/25/2018 15:06
  * @Description
  */
 @Data
 @AllArgsConstructor
 class Player implements Comparable<Player> {
+	
 	private int ranking;
 	
 	private String name;
