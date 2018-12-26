@@ -1,5 +1,7 @@
 package com.chris.immutable;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -20,18 +22,29 @@ class FinalReferenceBean {
 	
 	private static final List<String> UNMODIFIED_PRIVATE_VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
 	
+	private static final List<String> CLONE_PRIVATE_VALUES = Arrays.asList(PRIVATE_VALUES.clone());
+	
 	static final String FIRST_NAME = "Chris";
+	
 	static final String LAST_NAME = "Li";
 	
 	public static void main(String[] args) {
 		// modifiedContentOfFinalObject();
-		unmodifiedPrivateValuesTest();
+		unmodifiedPrivateValuesTest(CLONE_PRIVATE_VALUES, "newvalue", 2);
 	}
 	
-	private static void unmodifiedPrivateValuesTest() {
-		for (String unmodifiedPrivateValue : UNMODIFIED_PRIVATE_VALUES) {
-			System.out.println(unmodifiedPrivateValue);
+	private static void unmodifiedPrivateValuesTest(List<String> array, String newValue, int index) {
+		for (String one : array) {
+			System.out.println(one);
 		}
+		if (index >= 0 && StringUtils.isNotEmpty(newValue)) {
+			array.set(index, newValue);
+		}
+		System.out.println("after modifing.");
+		for (String one : array) {
+			System.out.println(one);
+		}
+		
 	}
 	
 	@SuppressWarnings("unused")
