@@ -1,7 +1,5 @@
 package com.chris.algorithm;
 
-import java.util.Arrays;
-
 /**
  * @Auther Chris Lee
  * @Date 12/26/2018 15:19
@@ -12,8 +10,8 @@ public class QuickSort {
 	public static void main(String[] args) {
 		QuickSort quickSort = new QuickSort();
 		int[] array = {11, 19, 16, 8, 3, 8, 18, 16, 0, 1, 18, 19, 13, 15, 6, 12, 11, 8, 7, 3};
-		CommonUtils.printArray2Str(array);
 		quickSort.quickSort(array, 0, array.length - 1);
+		CommonUtils.printArray2Str(array);
 	}
 	
 	private void quickSort(int[] array, int lowerIndex, int higherIndex) {
@@ -22,7 +20,6 @@ public class QuickSort {
 		
 		// calculate pivot number, I am taking pivot as middle index number
 		int pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2];
-
 		// Divide into two arrays
 		while (i <= j) {
 			/*
