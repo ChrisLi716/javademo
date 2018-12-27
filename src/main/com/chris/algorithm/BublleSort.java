@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @Date 12/25/2018 15:24
  * @Description
  */
-public class Sorts {
+public class BublleSort {
 	
 	private static void bublleSort(int amount) {
 		int[] intArray = CommonUtils.generateRandomIntArrays(amount);
