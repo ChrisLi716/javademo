@@ -6,4 +6,7 @@ package com.chris.algorithm;
  * @Description
  */
 public class GitPullReaseTest {
+	public static void main(String[] args) {
+		System.out.println("test git pull --rebase");
+	}
 }
