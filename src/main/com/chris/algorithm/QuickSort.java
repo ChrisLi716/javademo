@@ -22,7 +22,7 @@ public class QuickSort {
 		
 		// calculate pivot number, I am taking pivot as middle index number
 		int pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2];
-		System.out.println("i=" + i + ",j=" + j + ",pivot=" + pivot);
+
 		// Divide into two arrays
 		while (i <= j) {
 			/*
@@ -37,8 +37,8 @@ public class QuickSort {
 			while (array[j] > pivot) {
 				j--;
 			}
-
-			if (i < j) {
+			
+			if (i <= j) {
 				int temp = array[i];
 				array[i] = array[j];
 				array[j] = temp;
@@ -47,8 +47,6 @@ public class QuickSort {
 				j--;
 			}
 		}
-        System.out.println("the stop index, i=" + i + ",j=" + j);
-		CommonUtils.printArray2Str(array);
 		// call quickSort() method recursively
 		if (lowerIndex < j) {
 			quickSort(array, lowerIndex, j);
