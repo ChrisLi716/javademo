@@ -21,7 +21,12 @@ public class CommonUtils {
 	}
 	
 	public static void main(String[] args) {
-		int[] intArray = generateRandomIntArrays(100);
+		int[] intArray = generateRandomIntArrays(10);
 		System.out.println(Arrays.toString(intArray));
 	}
+	
+	static void printArray2Str(int[] array) {
+		System.out.println(Arrays.toString(array));
+	}
+	
 }
