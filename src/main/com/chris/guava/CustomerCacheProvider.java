@@ -18,7 +18,7 @@ public enum CustomerCacheProvider
 	
 	private CustomerRepo customerRepo;
 	
-	private CustomerCacheProvider()
+	CustomerCacheProvider()
 	{
 		customerRepo = new CustomerRepo();
 		customerCache =
