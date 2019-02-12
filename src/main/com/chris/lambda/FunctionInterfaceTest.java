@@ -7,6 +7,7 @@ import java.util.List;
  * @Auther Chris Lee
  * @Date 12/21/2018 12:45
  * @Description
+ *
  */
 public class FunctionInterfaceTest {
 	
@@ -24,24 +25,24 @@ public class FunctionInterfaceTest {
 		list.add("3");
 		list.add("4");
 		list.add("5");
+		list.add("8");
+		list.add("8");
 		
-		long count = list.stream().filter(str -> 0 == (Integer.valueOf(str) % 2)).count();
+		long count = list.stream().filter(str -> 0 == (Integer.valueOf(str) % 2)).distinct().count();
 		System.out.println(count);
 		
 	}
 	
 	private static void lambdaTest(FunctionInterfaceTest test) {
 		test.func(() -> test.outputStr("Hello Lambda!"));
-		
 		test.funcParams((Integer i) -> test.outputStr("Hello Lambda!" + i));
-		
-		boolean result = test.funcParams2((Integer i) -> true);
+		boolean result = test.funcParams2((Integer i) -> true, 1);
 		System.out.println("result:" + result);
 		
 		boolean result2 = test.funcParams2((Integer i) -> {
 			test.outputStr("Hello Lambda!" + i);
 			return i == 1;
-		});
+		}, 2);
 		System.out.println("result2:" + result2);
 	}
 	
@@ -54,8 +55,7 @@ public class FunctionInterfaceTest {
 		fi.testLambda(i);
 	}
 	
-	private boolean funcParams2(FunctionInterfaceParams2<Integer> fi) {
-		int i = 2;
+	private boolean funcParams2(FunctionInterfaceParams2<Integer> fi, int i) {
 		return fi.testLambda(i);
 	}
 	
