@@ -19,7 +19,7 @@ public class Person implements Cloneable, Serializable {
 	
 	private City city;
 	
-	public Person shadowClone()
+	public Person shallowClone()
 		throws CloneNotSupportedException {
 		/*
 		 * as we know reference variables holds address of the object instead of object itself, which can also be referred from

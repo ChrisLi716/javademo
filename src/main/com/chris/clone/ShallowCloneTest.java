@@ -2,14 +2,13 @@ package com.chris.clone;
 
 import com.chris.clone.beans.City;
 import com.chris.clone.beans.Person;
-import org.apache.commons.beanutils.BeanUtils;
 
 /**
  * @Auther Chris Lee
  * @Date 12/25/2018 11:00
  * @Description
  */
-public class ShadowCloneTest {
+public class ShallowCloneTest {
 	
 	public static void main(String[] args)
 		throws Exception {
@@ -22,7 +21,7 @@ public class ShadowCloneTest {
 		Person person_1 = new Person("Chris", 1111, city);
 		System.out.println(person_1.toString());
 		
-		Person person_2 = person_1.shadowClone();
+		Person person_2 = person_1.shallowClone();
 		
 		CommonUtils.judgeObjects(person_1, person_2);
 	}
