@@ -9,11 +9,13 @@ import java.util.concurrent.TimeUnit;
  */
 public class Resource1 {
 	
+	private static int TIMES = 6;
+	
 	public static void b() {
 		// other operations should not be locked...
 		System.out.println(Thread.currentThread().getName() + ":not synchronized in b()");
 		synchronized (Resource1.class) {
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < TIMES; i++) {
 				System.out.println(Thread.currentThread().getName() + ":synchronized in b()");
 				try {
 					TimeUnit.SECONDS.sleep(2);
@@ -29,7 +31,7 @@ public class Resource1 {
 		// other operations should not be locked...
 		System.out.println(Thread.currentThread().getName() + ":not synchronized in f()");
 		synchronized (this) {
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < TIMES; i++) {
 				System.out.println(Thread.currentThread().getName() + ":synchronized in f()");
 				try {
 					TimeUnit.SECONDS.sleep(2);
@@ -45,7 +47,7 @@ public class Resource1 {
 		// other operations should not be locked...
 		System.out.println(Thread.currentThread().getName() + ":not synchronized in g()");
 		synchronized (this) {
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < TIMES; i++) {
 				System.out.println(Thread.currentThread().getName() + ":synchronized in g()");
 				try {
 					TimeUnit.SECONDS.sleep(2);
@@ -61,7 +63,7 @@ public class Resource1 {
 		// other operations should not be locked...
 		System.out.println(Thread.currentThread().getName() + ":not synchronized in h()");
 		synchronized (this) {
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < TIMES; i++) {
 				System.out.println(Thread.currentThread().getName() + ":synchronized in h()");
 				try {
 					TimeUnit.SECONDS.sleep(2);
@@ -75,13 +77,14 @@ public class Resource1 {
 	
 	public static void main(String[] args) {
 		final Resource1 rs = new Resource1();
+		final Resource1 rs2 = new Resource1();
 		new Thread(() -> {
-			Resource1.b();
+			//Resource1.b();
 			rs.f();
 		}).start();
-		new Thread(rs::f).start();
-		new Thread(rs::g).start();
-		rs.h();
+		//new Thread(Resource1::b).start();
+		new Thread(rs2::g).start();
+
 		
 	}
 }
