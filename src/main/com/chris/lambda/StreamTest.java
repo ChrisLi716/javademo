@@ -1,11 +1,10 @@
 package com.chris.lambda;
 
-import com.chris.CommonUtils;
+import com.chris.SysPathUtils;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -60,7 +59,7 @@ public class StreamTest {
         FileReader reader = null;
         BufferedReader bufferedReader = null;
         try {
-            String path = CommonUtils.getCurrentClzPath(StreamTest.class);
+            String path = SysPathUtils.getCurrentClzPath(StreamTest.class);
             if (StringUtils.isNotEmpty(path)) {
                 File file = new File(path + File.separator + "README");
                 reader = new FileReader(file);

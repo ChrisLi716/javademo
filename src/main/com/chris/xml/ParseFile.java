@@ -1,6 +1,6 @@
 package com.chris.xml;
 
-import com.chris.CommonUtils;
+import com.chris.SysPathUtils;
 import com.chris.io.FileBean;
 import com.chris.io.FileWriterUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -62,7 +62,7 @@ public class ParseFile {
 			if (StringUtils.isNotEmpty(phonetic)) {
 				sb.append(" ").append(phonetic);
 			}
-			sb.append(CommonUtils.getNewLineCharacter());
+			sb.append(SysPathUtils.getNewLineCharacter());
 		}
 		
 		// iterate through attributes of root

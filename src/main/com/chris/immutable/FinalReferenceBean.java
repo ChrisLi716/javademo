@@ -15,12 +15,13 @@ class FinalReferenceBean {
 	
 	/*
 	 * A final field containing a reference to a mutable object has all the disadvantages of a nonfinal field. While the
-	 * reference cannot be modified, the referenced object can be modified—with disastrous results
+	 * reference cannot be modified, the referenced object can be modified with disastrous results
 	 */
 	
 	static final String[] PRIVATE_VALUES = {"1", "2", "3"};
 	
-	private static final List<String> UNMODIFIED_PRIVATE_VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
+	private static final List<String> UNMODIFIED_PRIVATE_VALUES =
+		Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
 	
 	private static final List<String> CLONE_PRIVATE_VALUES = Arrays.asList(PRIVATE_VALUES.clone());
 	
@@ -30,7 +31,8 @@ class FinalReferenceBean {
 	
 	public static void main(String[] args) {
 		// modifiedContentOfFinalObject();
-		unmodifiedPrivateValuesTest(CLONE_PRIVATE_VALUES, "newvalue", 2);
+		// unmodifiedPrivateValuesTest(CLONE_PRIVATE_VALUES, "newvalue", 2);
+		unmodifiedPrivateValuesTest(UNMODIFIED_PRIVATE_VALUES, "newvalue", 2);
 	}
 	
 	private static void unmodifiedPrivateValuesTest(List<String> array, String newValue, int index) {
