@@ -25,7 +25,7 @@ public class FunctionInterfaceTest {
 		list.add("4");
 		list.add("5");
 		
-		long count = list.stream().filter(str -> 0 == (Integer.valueOf(str) % 2)).count();
+		long count = list.stream().filter(str -> 0 == (Integer.parseInt(str) % 2)).count();
 		System.out.println(count);
 		
 	}
