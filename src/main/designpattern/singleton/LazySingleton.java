@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 class LazySingleton {
 
-	private static volatile LazySingleton lazyInstance;
+	private static volatile LazySingleton lazyInstance = null;
 
 	public static synchronized LazySingleton getInstance() {
 		if (null == lazyInstance) {

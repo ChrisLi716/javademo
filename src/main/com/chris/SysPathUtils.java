@@ -17,7 +17,6 @@ public class SysPathUtils {
         return System.getProperty("line.separator");
     }
 
-
     public static void main(String[] args) {
         System.out.println(File.separator);
         String path = getCurrentClzPath(null);
