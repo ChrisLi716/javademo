@@ -13,9 +13,6 @@ public class Product {
 
 	private int price;
 
-	public Product() {
-	}
-
 	private Product(Builder builder) {
 		this.id = builder.id;
 		this.type = builder.type;
