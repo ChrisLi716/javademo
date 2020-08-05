@@ -57,7 +57,6 @@ class ReflectUtils {
 							fieldValue = (String)value;
 						}
 					}
-					
 					if (StringUtils.isNotEmpty(fieldName)) {
 						if (temp.length() > 0) {
 							temp.append("&").append(fieldName).append("=").append(fieldValue);
