@@ -8,12 +8,12 @@ import java.util.Scanner;
  * @Description
  */
 public class WeightTable {
-	
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		double earthWeight = Double.parseDouble(scan.nextLine());
-		double mass = earthWeight / Planet.EARTH.surfaceGravity();
-		for (Planet p : Planet.values())
-			System.out.printf("Weight on %s is %f%n", p.name(), p.surfaceWeight(mass));
-	}
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        double earthWeight = Double.parseDouble(scan.nextLine());
+        double mass = earthWeight / Planet.EARTH.surfaceGravity();
+        for (Planet p : Planet.values())
+            System.out.printf("Weight on %s is %f%n", p.name(), p.surfaceWeight(mass));
+    }
 }
