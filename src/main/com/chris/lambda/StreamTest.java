@@ -126,7 +126,7 @@ public class StreamTest {
         buildInList.add(Arrays.asList("4", "5", "6"));
         buildInList.add(Arrays.asList("7", "8", "9", "0"));
 
-        //List<String> strList = buildInList.stream().flatMap(childList -> streamOf(childList)).collect(Collectors.toList());
+//        List<String> strList = buildInList.stream().flatMap(childList -> streamOf(childList)).collect(Collectors.toList());
     }
 
 
