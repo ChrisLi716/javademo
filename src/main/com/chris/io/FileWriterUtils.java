@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @Auther Chris Lee
@@ -18,7 +19,7 @@ public class FileWriterUtils {
 		File file = new File(fileFullName);
 		Writer writer = new FileWriter(file);
 		BufferedWriter bufferedWriter = new BufferedWriter(writer);
-		bufferedWriter.write(new String(bean.getContent(), "UTF-8"));
+		bufferedWriter.write(new String(bean.getContent(), StandardCharsets.UTF_8));
 		bufferedWriter.flush();
 		bufferedWriter.close();
 		writer.close();

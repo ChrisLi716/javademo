@@ -30,9 +30,9 @@ class FinalReferenceBean {
 	static final String LAST_NAME = "Li";
 	
 	public static void main(String[] args) {
-		// modifiedContentOfFinalObject();
-		// unmodifiedPrivateValuesTest(CLONE_PRIVATE_VALUES, "newvalue", 2);
-		unmodifiedPrivateValuesTest(UNMODIFIED_PRIVATE_VALUES, "newvalue", 2);
+		 // modifiedContentOfFinalObject();
+		 // unmodifiedPrivateValuesTest(CLONE_PRIVATE_VALUES, "newvalue", 2);
+		 unmodifiedPrivateValuesTest(UNMODIFIED_PRIVATE_VALUES, "newvalue", 2);
 	}
 	
 	private static void unmodifiedPrivateValuesTest(List<String> array, String newValue, int index) {
