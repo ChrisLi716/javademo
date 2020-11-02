@@ -1,4 +1,4 @@
-package designpattern.decorator;
+package com.design.pattern.decorator;
 
 public class ShellDecorator extends Decorator {
 

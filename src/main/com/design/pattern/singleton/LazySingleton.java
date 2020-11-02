@@ -1,4 +1,4 @@
-package designpattern.singleton;
+package com.design.pattern.singleton;
 
 import lombok.AccessLevel;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package designpattern.prototype;
+package com.design.pattern.prototype;
 
 public class Test {
 
