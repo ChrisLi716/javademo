@@ -1,4 +1,4 @@
-package com.chris.lambda.method.reference;
+package com.chris.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,11 +14,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Employee {
 
-    Employee(int id) {
+    public Employee(int id) {
         this.id = id;
     }
 
-    Employee(int id, String name) {
+    public Employee(int id, String name) {
         this.id = id;
         this.name = name;
     }
