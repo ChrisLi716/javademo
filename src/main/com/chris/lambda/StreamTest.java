@@ -1,13 +1,14 @@
 package com.chris.lambda;
 
 import com.chris.SysPathUtils;
+import com.chris.entities.Employee;
+import com.chris.lambda.method.reference.EmployeeData;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Test;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -73,10 +74,12 @@ public class StreamTest {
                 }
 
                 System.out.println("the amount of lines : " + lines.size());
-                List<String> allwords = lines.stream().filter(StringUtils::isNotEmpty).map(oneLine -> oneLine.split(" ")).flatMap(Arrays::stream).collect(Collectors.toList());
+                List<String> allwords = lines.stream().filter(StringUtils::isNotEmpty).map(oneLine -> oneLine.split(
+                        " ")).flatMap(Arrays::stream).collect(Collectors.toList());
                 System.out.println(allwords.size());
 
-                Long amount = lines.stream().filter(StringUtils::isNotEmpty).map(oneLine -> oneLine.split(" ")).flatMap(Arrays::stream).count();
+                Long amount =
+                        lines.stream().filter(StringUtils::isNotEmpty).map(oneLine -> oneLine.split(" ")).flatMap(Arrays::stream).count();
                 System.out.println(amount);
 
             }
@@ -126,7 +129,21 @@ public class StreamTest {
         buildInList.add(Arrays.asList("4", "5", "6"));
         buildInList.add(Arrays.asList("7", "8", "9", "0"));
 
-//        List<String> strList = buildInList.stream().flatMap(childList -> streamOf(childList)).collect(Collectors.toList());
+//        List<String> strList = buildInList.stream().flatMap(childList -> streamOf(childList)).collect(Collectors
+//        .toList());
+    }
+
+
+    @Test
+    public void groupBy() {
+        List<Employee> employees = EmployeeData.getEmployees();
+        Map<String, List<Employee>> collect =
+                employees.stream().collect(Collectors.groupingBy(Employee::getName, LinkedHashMap::new,
+                        Collectors.toList()));
+        collect.forEach((k, v) -> System.out.println(k + "," + v.toString()));
+
+
+        Map<String, List<Employee>> collect1 = employees.stream().collect(Collectors.groupingBy(Employee::getName));
     }
 
 

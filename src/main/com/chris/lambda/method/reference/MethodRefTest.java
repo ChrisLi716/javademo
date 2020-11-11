@@ -1,5 +1,6 @@
 package com.chris.lambda.method.reference;
 
+import com.chris.entities.Employee;
 import org.junit.Test;
 
 import java.util.Comparator;
@@ -11,7 +12,7 @@ import java.util.function.Supplier;
 /**
  * 什么时候使用方法引用
  * 1. 当传递给lambda体的操作已经有实现的方法了，就可以使用方法引用
- * 2. 方法引用本质上就是lambda表达示，lambda表达示作为函数式接口的实例，所以方法引用也是函数式接口的实例
+ * 2. 方法引用本质上就是lambda表达式，lambda表达示作为函数式接口的实例，所以方法引用也是函数式接口的实例
  * 格式：
  * 类或对象::方法名称
  * <p>

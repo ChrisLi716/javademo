@@ -1,5 +1,7 @@
 package com.chris.lambda.method.reference;
 
+import com.chris.entities.Employee;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,7 @@ public class EmployeeData {
         list.add(new Employee(4, "Allan", 34, 15800.83));
         list.add(new Employee(5, "Hedy", 22, 25200.45));
         list.add(new Employee(6, "Ethan", 2, 22500.84));
+        list.add(new Employee(7, "Chris", 13, 13000.43));
 
         return list;
     }

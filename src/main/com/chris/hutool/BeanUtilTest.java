@@ -4,9 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.bean.copier.CopyOptions;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.map.MapUtil;
-import com.chris.clone.beans.Person;
 import com.chris.entities.Employee;
-import org.apache.commons.beanutils.BeanUtilsBean;
 import org.junit.Test;
 
 import java.util.HashMap;

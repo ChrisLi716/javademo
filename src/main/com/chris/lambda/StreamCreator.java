@@ -1,6 +1,6 @@
 package com.chris.lambda;
 
-import com.chris.lambda.method.reference.Employee;
+import com.chris.entities.Employee;
 import com.chris.lambda.method.reference.EmployeeData;
 
 import java.util.Arrays;

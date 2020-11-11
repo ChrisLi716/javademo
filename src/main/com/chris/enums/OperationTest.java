@@ -17,11 +17,25 @@ public class OperationTest {
 
         for (Operation_V3 v3 : Operation_V3.values()) {
             System.out.println(v3.name() + ", " + v3.getSymbol() + ", " + v3.apply(10, 2));
-        }*/
+        }
 
         for (Operation_Lambda v_lambda : Operation_Lambda.values()) {
             System.out.println(v_lambda.name() + ", " + v_lambda.getSymbol() + ", " + v_lambda.apply(10, 2));
-        }
+        }*/
+
+        System.out.println(Operation_Lambda.DIVIDE.name());
+        System.out.println(Operation_Lambda.valueOf("DIVIDE"));
+
+//        switch (Operation_Lambda.valueOf("MINUS")){
+//            case Operation_Lambda.DIVIDE:
+//
+//            case Operation_Lambda.MINUS:
+//
+//            case Operation_Lambda.TIMES:
+//
+//            case Operation_Lambda.PLUS:
+//
+//        }
     }
 
 

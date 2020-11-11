@@ -1,5 +1,6 @@
 package com.chris.lambda.method.reference;
 
+import com.chris.entities.Employee;
 import org.junit.Test;
 
 import java.util.function.BiFunction;

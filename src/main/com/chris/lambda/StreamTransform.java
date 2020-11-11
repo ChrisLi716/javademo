@@ -1,13 +1,12 @@
 package com.chris.lambda;
 
-import com.chris.lambda.method.reference.Employee;
+import com.chris.entities.Employee;
 import com.chris.lambda.method.reference.EmployeeData;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamTransform {
