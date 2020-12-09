@@ -3,8 +3,8 @@ package com.chris.lambda;
 import com.chris.entities.Employee;
 import com.chris.lambda.method.reference.EmployeeData;
 import org.junit.Test;
-import sun.font.TrueTypeFont;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -41,5 +41,30 @@ public class CollectorsTest {
         System.out.println("False:" + map.get(Boolean.FALSE));
 
     }
+
+
+    @Test
+    public void groupBy() {
+        List<Employee> employees = EmployeeData.getEmployees();
+        Map<String, List<Employee>> collect =
+                employees.stream().collect(Collectors.groupingBy(Employee::getName, LinkedHashMap::new,
+                        Collectors.toList()));
+        collect.forEach((k, v) -> System.out.println(k + "," + v.toString()));
+
+        Map<String, List<Employee>> collect1 = employees.stream().collect(Collectors.groupingBy(Employee::getName));
+        collect1.forEach((k, v) -> System.out.println(k + "," + v.toString()));
+
+        //group by name, and sum the salary of each name
+        Map<String, Double> collect2 = employees.stream().collect(Collectors.groupingByConcurrent(Employee::getName,
+                Collectors.summingDouble(Employee::getSalary)));
+        collect2.forEach((k, v) -> System.out.println(k + "," + v.toString()));
+
+        //group by name and count each name
+        Map<String, Long> collect3 = employees.stream().collect(Collectors.groupingByConcurrent(Employee::getName,
+                Collectors.counting()));
+        collect3.forEach((k, v) -> System.out.println(k + "," + v.toString()));
+
+    }
+
 
 }

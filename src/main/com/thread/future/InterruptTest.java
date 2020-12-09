@@ -7,7 +7,7 @@ public class InterruptTest {
 	public static void main(String[] args)
 		throws IOException {
 		InterruptTest test = new InterruptTest();
-		test.interruptNonBlockedThread();
+		test.interruptBlockedThread();
 		
 	}
 	
