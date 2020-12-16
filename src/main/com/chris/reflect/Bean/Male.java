@@ -2,6 +2,7 @@ package com.chris.reflect.Bean;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
+@ToString(callSuper = true)
 public class Male extends HumanBeing {
 
     public static final Class CLZ_TYPE = Male.class;
@@ -33,6 +35,7 @@ public class Male extends HumanBeing {
     }
 
     public Male(String name, String address) {
+        super(name, address);
         System.out.println("init default constructor for " + CLZ_TYPE.getTypeName());
     }
 

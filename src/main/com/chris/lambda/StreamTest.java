@@ -134,4 +134,14 @@ public class StreamTest {
     }
 
 
+    @Test
+    public void fileterTest() {
+//        List<Integer> ints1 = Arrays.asList(1, 2, 3, 54, 56);
+        List<Integer> ints1 = new ArrayList<>();
+        List<Integer> ints2 = Arrays.asList(1, 2, 3, 4, 1, 56);
+        ints2.stream().filter(x -> !ints1.contains(x)).forEach(System.out::println);
+
+    }
+
+
 }

@@ -1,7 +1,5 @@
 package com.chris;
 
-//import com.chris.lambda.LambdaInCollection;
-
 import java.io.File;
 import java.net.URL;
 
@@ -19,7 +17,7 @@ public class SysPathUtils {
 
     public static void main(String[] args) {
         System.out.println(File.separator);
-        String path = getCurrentClzPath(null);
+        String path = getRootPath(SysPathUtils.class);
         System.out.println(path);
     }
 
