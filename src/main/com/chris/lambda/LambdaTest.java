@@ -57,11 +57,11 @@ public class LambdaTest {
 
         //类型推断，参数的类型可以省略
         Consumer<String> consumer2 = (s) -> System.out.println(s);
-        consumer1.accept("一个是听的人当真了，一个是说的人当真了");
+        consumer2.accept("一个是听的人当真了，一个是说的人当真了");
 
         //如果只有一个参数，小括号可以省略
         Consumer<String> consumer3 = s -> System.out.println(s);
-        consumer1.accept("一个是听的人当真了，一个是说的人当真了");
+        consumer3.accept("一个是听的人当真了，一个是说的人当真了");
 
     }
 

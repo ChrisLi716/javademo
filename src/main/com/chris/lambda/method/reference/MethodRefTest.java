@@ -50,7 +50,7 @@ public class MethodRefTest {
 
         //method reference
         Supplier<String> supplier1 = emp::getName;
-        System.out.println(supplier.get());
+        System.out.println(supplier1.get());
 
     }
 
@@ -153,7 +153,7 @@ public class MethodRefTest {
     public void test7() {
         Employee emp = new Employee(2, "John", 48, 13000.85);
 
-        Function<Employee, String> function = (e) -> e.getName();
+        Function<Employee, String> function = e -> e.getName();
         String name = function.apply(emp);
         System.out.println(name);
 

@@ -10,7 +10,7 @@ import java.io.IOException;
 public class SleepTest {
 
     private int i = 10;
-    private Object object = new Object();
+    private final Object object = new Object();
 
     public static void main(String[] args) throws IOException {
         SleepTest test = new SleepTest();
@@ -29,7 +29,7 @@ public class SleepTest {
                 System.out.println("i:" + i);
                 try {
                     System.out.println("线程" + Thread.currentThread().getName() + "进入睡眠状态");
-                    Thread.currentThread().sleep(10000);
+                    sleep(10000);
                 } catch (InterruptedException e) {
                     // TODO: handle exception
                 }
