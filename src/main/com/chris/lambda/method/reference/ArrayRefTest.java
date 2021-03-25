@@ -3,12 +3,10 @@ package com.chris.lambda.method.reference;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.function.BiFunction;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
 /**
- * 构造器引用
+ * 数组引用
  * 和方法引用类似，可以把数组看成一个特殊的类，则写法与构造器引用类似。
  **/
 public class ArrayRefTest {

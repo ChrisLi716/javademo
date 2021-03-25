@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class StreamTransform {
+public class StreamAPI_Transform {
 
     /**
      * 筛选与切片
@@ -51,13 +51,13 @@ public class StreamTransform {
     @Test
     public void flatMapTest() {
         List<String> list = Arrays.asList("aa", "bb", "cc");
-        Stream<Stream<Character>> streamStream = list.stream().map(StreamTransform::forStr2Stream);
+        Stream<Stream<Character>> streamStream = list.stream().map(StreamAPI_Transform::forStr2Stream);
         streamStream.forEach(s -> {
             s.forEach(System.out::println);
         });
 
         System.out.println("=====================");
-        list.stream().flatMap(StreamTransform::forStr2Stream).forEach(System.out::println);
+        list.stream().flatMap(StreamAPI_Transform::forStr2Stream).forEach(System.out::println);
 
     }
 
@@ -88,12 +88,11 @@ public class StreamTransform {
             } else {
                 //从大到小
                 // return -Double.compare(e1.getSalary(), e2.getSalary());
-                //从小到大
+                //从小到大一生气你就输了
                 return Double.compare(e1.getSalary(), e2.getSalary());
             }
         }).forEach(System.out::println);
 
     }
-
 
 }
