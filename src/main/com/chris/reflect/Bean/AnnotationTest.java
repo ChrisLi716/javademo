@@ -12,5 +12,5 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface AnnotationTest {
-    public String key() default "";
+    String key() default "";
 }
