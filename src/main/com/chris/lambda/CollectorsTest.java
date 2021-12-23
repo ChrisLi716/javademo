@@ -19,13 +19,15 @@ public class CollectorsTest {
     @Test
     public void toMap() {
         List<Employee> employeeList = EmployeeData.getEmployees();
-        Map<Integer, Employee> collect = employeeList.parallelStream().collect(Collectors.toMap(Employee::getId, a -> a, (oldKey, newKey) -> newKey));
+        Map<Integer, Employee> collect = employeeList.parallelStream().collect(Collectors.toMap(Employee::getId,
+                a -> a, (oldKey, newKey) -> newKey));
 
         for (Map.Entry<Integer, Employee> employeeEntry : collect.entrySet()) {
             System.out.println(employeeEntry.getKey() + ", " + employeeEntry.getValue());
         }
 
-        Map<Integer, String> collect1 = employeeList.parallelStream().collect(Collectors.toMap(Employee::getId, Employee::getName, (oldKey, newKey) -> newKey));
+        Map<Integer, String> collect1 = employeeList.parallelStream().collect(Collectors.toMap(Employee::getId,
+                Employee::getName, (oldKey, newKey) -> newKey));
         for (Map.Entry<Integer, String> employeeEntry : collect1.entrySet()) {
             System.out.println(employeeEntry.getKey() + ", " + employeeEntry.getValue());
         }
@@ -46,13 +48,16 @@ public class CollectorsTest {
     @Test
     public void groupBy() {
         List<Employee> employees = EmployeeData.getEmployees();
-        Map<String, List<Employee>> collect =
-                employees.stream().collect(Collectors.groupingBy(Employee::getName, LinkedHashMap::new,
-                        Collectors.toList()));
+        Map<String, List<Employee>> collect = employees.stream().collect(Collectors.groupingBy(Employee::getName,
+                LinkedHashMap::new, Collectors.toList()));
         collect.forEach((k, v) -> System.out.println(k + "," + v.toString()));
 
-        Map<String, List<Employee>> collect1 = employees.stream().collect(Collectors.groupingBy(Employee::getName));
-        collect1.forEach((k, v) -> System.out.println(k + "," + v.toString()));
+        Map<String, List<Employee>> collect1_1 = employees.stream().collect(Collectors.groupingBy(Employee::getName));
+        collect1_1.forEach((k, v) -> System.out.println(k + "," + v.toString()));
+
+        Map<String, Double> collect1_2 = employees.stream().collect(Collectors.groupingBy(Employee::getName,
+                Collectors.summingDouble(Employee::getSalary)));
+        collect1_2.forEach((k, v) -> System.out.println(k + "," + v.toString()));
 
         //group by name, and sum the salary of each name
         Map<String, Double> collect2 = employees.stream().collect(Collectors.groupingByConcurrent(Employee::getName,

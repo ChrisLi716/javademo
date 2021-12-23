@@ -22,6 +22,8 @@ public class CompletableFutureSourceCode {
     @Test
     public void asyn1() {
         CompletableFuture<String> cf = new CompletableFuture<>();
+
+        //complete方法完成该Future,否则在调用cf.get()阻塞主线程，等待返回结果
         cf.complete("hello future!");
 
         //调用者阻塞，等待返回结果
@@ -40,6 +42,7 @@ public class CompletableFutureSourceCode {
                 e.printStackTrace();
             }
         }).thenRun(() -> System.out.println("call back method after getting result!"));
+
         //主线程阻塞，等待任务执行完成
         cf.get();
     }
