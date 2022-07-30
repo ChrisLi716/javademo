@@ -14,6 +14,7 @@ import java.lang.reflect.Modifier;
 @Slf4j
 public class ReflectionUtilsTest {
 
+    /*
     private void injectServicesViaAnnotatedFields(final Object bean, final String beanName) {
         ReflectionUtils.doWithFields(bean.getClass(), new ReflectionUtils.FieldCallback() {
             public void doWith(Field field) {
@@ -33,5 +34,5 @@ public class ReflectionUtilsTest {
                 }
             }
         });
-    }
+    }*/
 }

@@ -2,6 +2,7 @@ package com.chris.lambda;
 
 import com.chris.entities.Employee;
 import com.chris.lambda.method.reference.EmployeeData;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -48,6 +49,7 @@ public class StreamCreator {
     /**
      * 创建无限流
      */
+    @Test
     public void createStreamByStream2() {
         /*
          迭代

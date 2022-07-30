@@ -36,7 +36,7 @@ public class MethodRefTest {
 
         //method reference
         Consumer<String> consumer1 = System.out::println;
-        consumer.accept("xian'an");
+        consumer1.accept("xian'an");
     }
 
     /**
