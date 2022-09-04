@@ -1,7 +1,7 @@
 package com.chris.lambda;
 
 import com.chris.entities.Employee;
-import com.chris.lambda.method.reference.EmployeeData;
+import com.chris.entities.TestData;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class StreamAPI_Transform {
      */
     @Test
     public void filter() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         employees.stream().filter(e -> e.getSalary() >= 20000).forEach(System.out::println);
         System.out.println("=====================");
         //返回前n个元素
@@ -37,7 +37,7 @@ public class StreamAPI_Transform {
      */
     @Test
     public void mapTest() {
-        List<Employee> employeeList = EmployeeData.getEmployees();
+        List<Employee> employeeList = TestData.getEmployees();
         employeeList.stream().map(e -> e.getName().toUpperCase()).forEach(System.out::println);
         System.out.println("=====================");
         //获取员工姓名大于5的员工的姓名
@@ -80,7 +80,7 @@ public class StreamAPI_Transform {
         integers.stream().sorted().forEach(System.out::println);
 
         System.out.println("=====================");
-        List<Employee> employeeList = EmployeeData.getEmployees();
+        List<Employee> employeeList = TestData.getEmployees();
         employeeList.stream().sorted((e1, e2) -> {
             int ageCompared = Integer.compare(e1.getAge(), e2.getAge());
             if (0 != ageCompared) {

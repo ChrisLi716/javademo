@@ -1,7 +1,7 @@
 package com.chris.lambda;
 
 import com.chris.entities.Employee;
-import com.chris.lambda.method.reference.EmployeeData;
+import com.chris.entities.TestData;
 import org.junit.Test;
 
 import java.util.*;
@@ -17,7 +17,7 @@ public class StreamAPI_Action {
 
     @Test
     public void testAllMatch() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         //判断是否都为成年人
         boolean isAdults = employees.stream().allMatch(e -> e.getAge() >= 18);
         if (isAdults) {
@@ -29,7 +29,7 @@ public class StreamAPI_Action {
 
     @Test
     public void testAnyMatch() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         boolean isHighSalary = employees.stream().anyMatch(e -> e.getSalary() > 10000);
         if (isHighSalary) {
             System.out.println("有人拿了高工资");
@@ -42,7 +42,7 @@ public class StreamAPI_Action {
      */
     @Test
     public void testNoneMatch() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         boolean hasNotEthan = employees.stream().noneMatch(e -> e.getName().equals("Ethan"));
         if (hasNotEthan) {
             System.out.println("没有Ethan");
@@ -57,7 +57,7 @@ public class StreamAPI_Action {
      */
     @Test
     public void testFindFirst() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         Optional<Employee> first = employees.stream().findFirst();
         System.out.println(first);
     }
@@ -68,7 +68,7 @@ public class StreamAPI_Action {
      */
     @Test
     public void testFindAny() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         Optional<Employee> any = employees.stream().findAny();
         Optional<Employee> any2 = employees.parallelStream().findAny();
         System.out.println(any);
@@ -78,7 +78,7 @@ public class StreamAPI_Action {
 
     @Test
     public void testStatistics() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
 
         //返回流中元素的总个数
         long count = employees.stream().filter(e -> e.getSalary() > 15000).count();
@@ -111,7 +111,7 @@ public class StreamAPI_Action {
         System.out.println(sum);
 
         //计算公司中所有员工的工资总和
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         Stream<Double> doubleStream = employees.stream().map(Employee::getSalary);
         // Optional<Double> reduce= doubleStream.reduce((a, b) -> a + b);
         Optional<Double> reduce = doubleStream.reduce(Double::sum);
@@ -125,7 +125,7 @@ public class StreamAPI_Action {
      */
     @Test
     public void testCollector() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
 
         List<Employee> list = employees.stream().filter(e -> e.getSalary() > 10000).collect(Collectors.toList());
         Set<Employee> set = employees.stream().filter(e -> e.getSalary() > 10000).collect(Collectors.toSet());

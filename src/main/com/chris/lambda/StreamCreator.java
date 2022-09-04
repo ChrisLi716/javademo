@@ -1,7 +1,7 @@
 package com.chris.lambda;
 
 import com.chris.entities.Employee;
-import com.chris.lambda.method.reference.EmployeeData;
+import com.chris.entities.TestData;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public class StreamCreator {
      * 通过集合创建Stream
      */
     public void createStreamByCollection() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         //返回一个顺序流
         Stream<Employee> stream = employees.stream();
 

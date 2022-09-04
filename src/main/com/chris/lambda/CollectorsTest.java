@@ -1,7 +1,7 @@
 package com.chris.lambda;
 
 import com.chris.entities.Employee;
-import com.chris.lambda.method.reference.EmployeeData;
+import com.chris.entities.TestData;
 import org.junit.Test;
 
 import java.util.LinkedHashMap;
@@ -18,7 +18,7 @@ public class CollectorsTest {
 
     @Test
     public void toMap() {
-        List<Employee> employeeList = EmployeeData.getEmployees();
+        List<Employee> employeeList = TestData.getEmployees();
         Map<Integer, Employee> collect = employeeList.parallelStream().collect(Collectors.toMap(Employee::getId,
                 a -> a, (oldKey, newKey) -> newKey));
 
@@ -36,7 +36,7 @@ public class CollectorsTest {
 
     @Test
     public void partitonBy() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         Map<Boolean, List<Employee>> map =
                 employees.stream().collect(Collectors.partitioningBy(emp -> emp.getSalary() > 20000));
         System.out.println("True:" + map.get(Boolean.TRUE));
@@ -47,7 +47,7 @@ public class CollectorsTest {
 
     @Test
     public void groupBy() {
-        List<Employee> employees = EmployeeData.getEmployees();
+        List<Employee> employees = TestData.getEmployees();
         Map<String, List<Employee>> collect = employees.stream().collect(Collectors.groupingBy(Employee::getName,
                 LinkedHashMap::new, Collectors.toList()));
         collect.forEach((k, v) -> System.out.println(k + "," + v.toString()));

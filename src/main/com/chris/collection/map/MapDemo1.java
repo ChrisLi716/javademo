@@ -10,11 +10,11 @@ import java.util.TreeMap;
  * @Date 2/1/2019 14:31
  * @Description
  */
-public class MapExe01 {
+public class MapDemo1 {
 	
 	public static void main(String[] args) {
-		MapExe01 mapExe01 = new MapExe01();
-		mapExe01.tryHashTable();
+		MapDemo1 mapDemo1 = new MapDemo1();
+		mapDemo1.tryHashTable();
 	}
 	
 	private void tryHashMap() {
