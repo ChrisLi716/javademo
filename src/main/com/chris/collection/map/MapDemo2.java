@@ -36,7 +36,7 @@ public class MapDemo2 {
 
 
     @Test
-    public void testMeger2() throws JsonProcessingException {
+    public void testMerge2() throws JsonProcessingException {
         List<Student> students = TestData.getStudents();
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -56,6 +56,8 @@ public class MapDemo2 {
         }};
         // 2
         System.out.println(map.compute(k, (key, oldVal) -> oldVal + 1));
+        //{key=2}
+        System.out.println(map);
     }
 
     @Test
@@ -82,6 +84,8 @@ public class MapDemo2 {
             }
             return oldCount + 1;
         }));
+
+        //{A=3, B=1, C=2, E=5}
         System.out.println(wordCountMap);
     }
 
