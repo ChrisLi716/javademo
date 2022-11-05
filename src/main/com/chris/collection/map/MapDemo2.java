@@ -90,4 +90,9 @@ public class MapDemo2 {
     }
 
 
+    @Test
+    public void test() {
+        System.out.println(1 << 30);
+    }
+
 }

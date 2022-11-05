@@ -2,6 +2,7 @@ package com.chris.comparable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Auther Chris Lee
@@ -10,6 +11,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 class Player implements Comparable<Player> {
 	
 	private int ranking;

@@ -2,6 +2,7 @@ package com.chris.collection.map;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -12,12 +13,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 class Person {
-	
-	private String name;
-	
-	private String address;
-	
-	private int age;
-	
+    private String name;
+    private String address;
+    private int age;
 }

@@ -10,26 +10,25 @@ import java.util.List;
  * @Description
  */
 public class ComparableTest {
-	
-	public static void main(String[] args) {
-		List<Player> footballTeam = new ArrayList<>();
 
-		Player player1 = new Player(59, "John", 20);
-		Player player2 = new Player(67, "Roger", 22);
-		Player player3 = new Player(45, "Steven", 24);
+    public static void main(String[] args) {
+        List<Player> footballTeam = new ArrayList<>();
 
-		footballTeam.add(player1);
-		footballTeam.add(player2);
-		footballTeam.add(player3);
-		
-		comparable(footballTeam);
-	}
-	
+        Player player1 = new Player(59, "John", 20);
+        Player player2 = new Player(67, "Roger", 22);
+        Player player3 = new Player(45, "Steven", 24);
 
-	
-	private static void comparable(List<Player> footballTeam) {
-		System.out.println("Before Sorting : " + footballTeam);
-		Collections.sort(footballTeam);
-		System.out.println("After Sorting : " + footballTeam);
-	}
+        footballTeam.add(player1);
+        footballTeam.add(player2);
+        footballTeam.add(player3);
+
+        comparable(footballTeam);
+    }
+
+
+    private static void comparable(List<Player> footballTeam) {
+        System.out.println("Before Sorting : " + footballTeam);
+        Collections.sort(footballTeam);
+        System.out.println("After Sorting : " + footballTeam);
+    }
 }

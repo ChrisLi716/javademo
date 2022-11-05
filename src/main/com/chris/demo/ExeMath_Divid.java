@@ -31,7 +31,7 @@ public class ExeMath_Divid {
 		
 		for (int i = 0; i < group; i++) {
 			int beginIndex = i * amountPerGroup;
-			int endIndex = (i + 1) * amountPerGroup > totalAmount ? totalAmount : (i + 1) * amountPerGroup;
+			int endIndex = Math.min((i + 1) * amountPerGroup, totalAmount);
 			if (beginIndex < endIndex) {
 				System.out.println("beginIndex:" + beginIndex + ",endIndex:" + (endIndex - 1));
 				System.out.println(allList.subList(beginIndex, endIndex));
