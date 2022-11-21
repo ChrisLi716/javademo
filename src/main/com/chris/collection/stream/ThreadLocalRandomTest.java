@@ -2,7 +2,7 @@ package com.chris.collection.stream;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Test {
+public class ThreadLocalRandomTest {
 
 	public static void main(String[] args) {
 
