@@ -1,4 +1,4 @@
-package com.chris.guava;
+package com.chris.guava.loadingcache;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
